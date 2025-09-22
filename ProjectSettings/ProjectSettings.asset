@@ -171,11 +171,12 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.uhasselt.edm.ShootTheTarget
     Standalone: com.uhasselt.edm.ShootTheTarget
+    Windows Store Apps: com.uhasselt.edm.ShootTheTarget
   buildNumber:
     Standalone: 0
     iPhone: 0
     tvOS: 0
-  overrideDefaultApplicationIdentifier: 0
+  overrideDefaultApplicationIdentifier: 1
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 23
   AndroidTargetSdkVersion: 0
