@@ -8,6 +8,7 @@ public class GunScript : MonoBehaviour
 {
 
     public Transform puntjeVanDeBarrel;
+    public float hitForce = 10f;
 
     void Start()
     {
@@ -29,12 +30,21 @@ public class GunScript : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(puntjeVanDeBarrel.position, puntjeVanDeBarrel.forward, out hit, 100f))
         {
-            GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            sphere.transform.position = hit.point;
-            sphere.transform.localScale = Vector3.one * 0.05f; // Tiny sphere
-            sphere.GetComponent<Renderer>().material.color = Color.red;
+            // Spawn bolletje voor "bullet hole"
+            GameObject bulletHole = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            bulletHole.transform.position = hit.point;
+            bulletHole.transform.localScale = Vector3.one * 0.02f;
+            bulletHole.GetComponent<Renderer>().material.color = Color.black;
+            bulletHole.transform.SetParent(hit.transform);
+            Destroy(bulletHole, 2f);
 
-            Destroy(sphere, 2f);
+            // Als de ray een rigidbody raakt, apply een force
+            Rigidbody rb = hit.rigidbody;
+            if (rb != null)
+            {
+                rb.AddForceAtPosition(puntjeVanDeBarrel.forward * hitForce, hit.point, ForceMode.Impulse);
+            }
         }
     }
+
 }
