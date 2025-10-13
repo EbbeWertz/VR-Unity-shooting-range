@@ -264,6 +264,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400010, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+      propertyPath: SnapRotation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400010, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+      propertyPath: RotationRatchet
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400010, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: RotateAroundGuardianCenter
       value: 1
       objectReference: {fileID: 0}
@@ -1113,7 +1121,11 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 287962107}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &1594413545
+=======
+--- !u!1 &1938297371
+>>>>>>> 18fdbd7971076a193b06b09febe51a516af41cd3
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1121,22 +1133,34 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 1594413548}
   - component: {fileID: 1594413547}
   - component: {fileID: 1594413546}
   m_Layer: 0
   m_Name: EventSystem
+=======
+  - component: {fileID: 1938297373}
+  - component: {fileID: 1938297372}
+  m_Layer: 0
+  m_Name: XR Interaction Manager
+>>>>>>> 18fdbd7971076a193b06b09febe51a516af41cd3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!114 &1594413546
+=======
+--- !u!114 &1938297372
+>>>>>>> 18fdbd7971076a193b06b09febe51a516af41cd3
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1594413545}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1166,12 +1190,25 @@ MonoBehaviour:
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1594413548
+=======
+  m_GameObject: {fileID: 1938297371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83e4e6cca11330d4088d729ab4fc9d9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1938297373
+>>>>>>> 18fdbd7971076a193b06b09febe51a516af41cd3
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1594413545}
+=======
+  m_GameObject: {fileID: 1938297371}
+>>>>>>> 18fdbd7971076a193b06b09febe51a516af41cd3
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1179,12 +1216,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &1939161662 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5830154924229687321, guid: 87de2f7050422c74dac3522ae117e048,
     type: 3}
   m_PrefabInstance: {fileID: 9053791841589791087}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> 18fdbd7971076a193b06b09febe51a516af41cd3
 --- !u!4 &1991873448 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 481164, guid: ce816f2e6abb0504092c23ed9b970dfd,
