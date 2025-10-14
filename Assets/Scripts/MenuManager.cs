@@ -28,7 +28,6 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    // Publieke functie die je in On Click() kan koppelen
     public void ResetObjects()
     {
         foreach (OriginalState state in originalStates)
@@ -39,8 +38,9 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    public void resetScore()
+    public void ResetScore()
     {
         PlayerPrefs.SetInt("Score", 0);
+        PlayerPrefs.Save();
     }
 }
