@@ -9,6 +9,9 @@ public class GunScript : MonoBehaviour
 
     public Transform puntjeVanDeBarrel;
     public float hitForce = 10f;
+    public GameObject impactStoneEffect;
+    public GameObject impactWoodEffect;
+    public GameObject impactMetalEffect;
 
     void Start()
     {
@@ -30,13 +33,26 @@ public class GunScript : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(puntjeVanDeBarrel.position, puntjeVanDeBarrel.forward, out hit, 100f))
         {
-            // Spawn bolletje voor "bullet hole"
-            GameObject bulletHole = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            bulletHole.transform.position = hit.point;
-            bulletHole.transform.localScale = Vector3.one * 0.02f;
-            bulletHole.GetComponent<Renderer>().material.color = Color.black;
-            bulletHole.transform.SetParent(hit.transform);
-            Destroy(bulletHole, 2f);
+
+            GameObject effectPrefab = impactStoneEffect;
+
+            if (hit.transform.CompareTag("Wood"))
+            {
+                effectPrefab = impactWoodEffect;
+            }
+            else if (hit.transform.CompareTag("Metal"))
+            {
+                effectPrefab = impactMetalEffect;
+            }
+
+            GameObject effect = Instantiate(
+                    effectPrefab,
+                    hit.point + hit.normal * 0.01f,
+                    Quaternion.LookRotation(hit.normal)
+                );
+
+            effect.transform.SetParent(hit.transform);
+            Destroy(effect, 5f);
 
             // Als de ray een rigidbody raakt, apply een force
             Rigidbody rb = hit.rigidbody;
