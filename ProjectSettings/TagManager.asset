@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Stone
+  - Metal
+  - Wood
+  - LeftHand
+  - RightHand
   layers:
   - Default
   - TransparentFX
