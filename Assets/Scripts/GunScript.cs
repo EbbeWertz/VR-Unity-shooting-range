@@ -20,6 +20,9 @@ public class GunScript : MonoBehaviour
 
     private OVRGrabbable grabbable;
 
+    [Header("Sound")]
+    public AudioManager audioManager;
+
     private float lastFireTime = -999f;
 
 
@@ -74,6 +77,7 @@ public class GunScript : MonoBehaviour
 
 
         muzzleEffect.GetComponent<ParticleSystem>().Play();
+        audioManager.PlaySFX(SoundEffect.Gunshot1, 0.5f);
 
         RaycastHit hit;
         Vector3 origin = puntjeVanDeBarrel.position;
