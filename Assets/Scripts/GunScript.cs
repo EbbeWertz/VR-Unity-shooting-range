@@ -25,6 +25,8 @@ public class GunScript : MonoBehaviour
 
     private float lastFireTime = -999f;
 
+    public GameObject scoreManager;
+
 
     void Start()
     {
@@ -85,11 +87,19 @@ public class GunScript : MonoBehaviour
 
         if (Physics.Raycast(origin, direction, out hit, maxDistance))
         {
+            int scoreToAdd = 10;
             GameObject effectPrefab = impactStoneEffectPrefab;
             if (hit.transform.CompareTag("Wood"))
+            {
                 effectPrefab = impactWoodEffectPrefab;
+                scoreToAdd = 5;
+            }
             else if (hit.transform.CompareTag("Metal"))
+            {
                 effectPrefab = impactMetalEffectPrefab;
+                scoreToAdd = 20;
+            }
+                
 
             GameObject effect = Instantiate(
                 effectPrefab,
@@ -106,7 +116,9 @@ public class GunScript : MonoBehaviour
 
             ScoreTargettableObject targetScoreScript = hit.transform.GetComponent<ScoreTargettableObject>();
             if (targetScoreScript != null)
-                targetScoreScript.HitScore(hit);
+                scoreToAdd = targetScoreScript.HitScore(hit);
+
+            scoreManager.GetComponent<ScoreManager>().AddScore(scoreToAdd);
         }
     }
 }

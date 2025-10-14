@@ -9,7 +9,7 @@ public class ScoreTargettableObject : MonoBehaviour
 
     public Transform scoreCenter;
 
-    public void HitScore(RaycastHit hit)
+    public int HitScore(RaycastHit hit)
     {
         float score = baseScore;
 
@@ -22,5 +22,6 @@ public class ScoreTargettableObject : MonoBehaviour
         }
 
         Debug.Log($"{gameObject.name} was hit! Score: {score:F1}");
+        return Mathf.RoundToInt(score);
     }
 }
