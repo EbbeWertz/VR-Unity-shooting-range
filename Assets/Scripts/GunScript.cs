@@ -16,12 +16,41 @@ public class GunScript : MonoBehaviour
 
     public Animator recoilAnim;
 
+    private OVRGrabbable grabbable;
+
+
+    void Start()
+    {
+        grabbable = GetComponent<OVRGrabbable>();
+    }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (grabbable == null)
         {
-            Schiet();
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                 Schiet();
+            }
+        }
+        else if (grabbable.isGrabbed)
+        {
+            var grabber = grabbable.grabbedBy;
+            if (grabber != null)
+            {
+                // Check which hand is holding the gun
+                OVRInput.Controller controller = grabber.CompareTag("LeftHand") 
+                    ? OVRInput.Controller.LTouch 
+                    : OVRInput.Controller.RTouch;
+
+                // Check trigger pressure
+                float triggerValue = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, controller);
+
+                if (triggerValue > 0.8f)
+                {
+                    Schiet();
+                }
+            }
         }
     }
 
