@@ -15,6 +15,8 @@ public class GunScript : MonoBehaviour
 
     public GameObject muzzleEffect;
 
+    public Animator recoilAnim;
+
     
 
     [Header("Laser Settings")]
@@ -76,6 +78,8 @@ public class GunScript : MonoBehaviour
     private void Schiet()
     {
         print("piew!");
+
+        recoilAnim.SetTrigger("Recoil");
 
         muzzleEffect.GetComponent<ParticleSystem>().Play();
 
