@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/GunHandDisabler.cs.meta
+guid: 7c61dfc16eef7fd4cb7fc130818ee1c4
+========
+guid: 0c3fc24ba26a92a44ad46946d2e04601
+>>>>>>>> Mathias_working_branch:Assets/Scripts/managers/AudioManager.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
