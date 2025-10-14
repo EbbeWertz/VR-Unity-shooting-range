@@ -7,6 +7,8 @@ public class GunScript : MonoBehaviour
     public float hitForce = 10f;
     public float maxDistance = 100f;
 
+    public float fireCooldownTime = 0.5f;
+
     [Header("Effects")]
     public GameObject impactStoneEffectPrefab;
     public GameObject impactWoodEffectPrefab;
@@ -18,6 +20,8 @@ public class GunScript : MonoBehaviour
 
     private OVRGrabbable grabbable;
 
+    private float lastFireTime = -999f;
+
 
     void Start()
     {
@@ -26,6 +30,10 @@ public class GunScript : MonoBehaviour
 
     void Update()
     {
+
+        if (Time.time - lastFireTime < fireCooldown)
+            return;
+            
         if (grabbable == null)
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
