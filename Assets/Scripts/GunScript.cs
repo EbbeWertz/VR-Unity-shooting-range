@@ -57,8 +57,10 @@ public class GunScript : MonoBehaviour
     private void Schiet()
     {
         print("piew!");
-
-        recoilAnim.SetTrigger("Recoil");
+	if(recoilAnim != null){
+	    recoilAnim.SetTrigger("Recoil");
+	}
+        
 
         muzzleEffect.GetComponent<ParticleSystem>().Play();
 
