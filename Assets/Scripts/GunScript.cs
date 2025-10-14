@@ -8,10 +8,14 @@ public class GunScript : MonoBehaviour
     public float hitForce = 10f;
     public float maxDistance = 100f;
 
-    [Header("Impact Effects")]
-    public GameObject impactStoneEffect;
-    public GameObject impactWoodEffect;
-    public GameObject impactMetalEffect;
+    [Header("Effects")]
+    public GameObject impactStoneEffectPrefab;
+    public GameObject impactWoodEffectPrefab;
+    public GameObject impactMetalEffectPrefab;
+
+    public GameObject muzzleEffect;
+
+    
 
     [Header("Laser Settings")]
     public bool showLaserAlways = true;
@@ -73,17 +77,19 @@ public class GunScript : MonoBehaviour
     {
         print("piew!");
 
+        muzzleEffect.GetComponent<ParticleSystem>().Play();
+
         RaycastHit hit;
         Vector3 origin = puntjeVanDeBarrel.position;
         Vector3 direction = puntjeVanDeBarrel.forward;
 
         if (Physics.Raycast(origin, direction, out hit, maxDistance))
         {
-            GameObject effectPrefab = impactStoneEffect;
+            GameObject effectPrefab = impactStoneEffectPrefab;
             if (hit.transform.CompareTag("Wood"))
-                effectPrefab = impactWoodEffect;
+                effectPrefab = impactWoodEffectPrefab;
             else if (hit.transform.CompareTag("Metal"))
-                effectPrefab = impactMetalEffect;
+                effectPrefab = impactMetalEffectPrefab;
 
             GameObject effect = Instantiate(
                 effectPrefab,
