@@ -33,12 +33,12 @@ public class GunScript : MonoBehaviour
 
         if (Time.time - lastFireTime < fireCooldownTime)
             return;
-            
+
         if (grabbable == null)
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                 Schiet();
+                Schiet();
             }
         }
         else if (grabbable.isGrabbed)
@@ -47,8 +47,8 @@ public class GunScript : MonoBehaviour
             if (grabber != null)
             {
                 // Check which hand is holding the gun
-                OVRInput.Controller controller = grabber.CompareTag("LeftHand") 
-                    ? OVRInput.Controller.LTouch 
+                OVRInput.Controller controller = grabber.CompareTag("LeftHand")
+                    ? OVRInput.Controller.LTouch
                     : OVRInput.Controller.RTouch;
 
                 // Check trigger pressure
@@ -65,12 +65,13 @@ public class GunScript : MonoBehaviour
     private void Schiet()
     {
 
-	lastFireTime = Time.time;
+        lastFireTime = Time.time;
         print("piew!");
-	if(recoilAnim != null){
-	    recoilAnim.SetTrigger("Recoil");
-	}
-        
+        if (recoilAnim != null)
+        {
+            recoilAnim.SetTrigger("Recoil");
+        }
+
 
         muzzleEffect.GetComponent<ParticleSystem>().Play();
 
@@ -98,6 +99,10 @@ public class GunScript : MonoBehaviour
             Rigidbody rb = hit.rigidbody;
             if (rb != null)
                 rb.AddForceAtPosition(direction * hitForce, hit.point, ForceMode.Impulse);
+
+            ScoreTargettableObject targetScoreScript = hit.transform.GetComponent<ScoreTargettableObject>();
+            if (targetScoreScript != null)
+                targetScoreScript.HitScore(hit);
         }
     }
 }
