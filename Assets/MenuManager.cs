@@ -37,4 +37,10 @@ public class MenuManager : MonoBehaviour
             state.objTransform.localScale = state.scale;
         }
     }
+
+    public void ResetScore()
+    {
+        PlayerPrefs.SetInt("Score", 0);
+        PlayerPrefs.Save();
+    }
 }
