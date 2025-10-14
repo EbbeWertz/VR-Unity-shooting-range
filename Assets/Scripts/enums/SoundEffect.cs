@@ -1,5 +1,8 @@
 public enum SoundEffect
 {
     Gunshot1,
-    Gunshot2,
+    ImpactStone,
+    ImpactWood,
+    ImpactMetal,
+
 }
