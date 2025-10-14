@@ -31,7 +31,7 @@ public class GunScript : MonoBehaviour
     void Update()
     {
 
-        if (Time.time - lastFireTime < fireCooldown)
+        if (Time.time - lastFireTime < fireCooldownTime)
             return;
             
         if (grabbable == null)
@@ -64,6 +64,8 @@ public class GunScript : MonoBehaviour
 
     private void Schiet()
     {
+
+	lastFireTime = Time.time;
         print("piew!");
 	if(recoilAnim != null){
 	    recoilAnim.SetTrigger("Recoil");
