@@ -9,6 +9,8 @@ public class GunScript : MonoBehaviour
 
     public float fireCooldownTime = 0.5f;
 
+    public float spreadAngle = 0.5f;
+
     [Header("Effects")]
     public GameObject impactStoneEffectPrefab;
     public GameObject impactWoodEffectPrefab;
@@ -82,6 +84,14 @@ public class GunScript : MonoBehaviour
         RaycastHit hit;
         Vector3 origin = puntjeVanDeBarrel.position;
         Vector3 direction = puntjeVanDeBarrel.forward;
+
+        // aim spread
+        direction = Quaternion.Euler(
+            Random.Range(-spreadAngle, spreadAngle),
+            Random.Range(-spreadAngle, spreadAngle),
+            0
+        ) * direction;
+        direction.Normalize();
 
         if (Physics.Raycast(origin, direction, out hit, maxDistance))
         {
