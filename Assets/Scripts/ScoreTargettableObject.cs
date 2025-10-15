@@ -9,6 +9,8 @@ public class ScoreTargettableObject : MonoBehaviour
 
     public Transform scoreCenter;
 
+    public ScoreManager scoreManager;
+
     public void HitScore(RaycastHit hit)
     {
         float score = baseScore;

@@ -705,6 +705,7 @@ MonoBehaviour:
   baseScore: 10
   scaleScoreFromHitpointToCenter: 1
   scoreCenter: {fileID: 629232305}
+  scoreManager: {fileID: 0}
 --- !u!4 &629232305 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2093763641544175518, guid: 87de2f7050422c74dac3522ae117e048,
@@ -1546,6 +1547,7 @@ MonoBehaviour:
   baseScore: 10
   scaleScoreFromHitpointToCenter: 0
   scoreCenter: {fileID: 0}
+  scoreManager: {fileID: 0}
 --- !u!1001 &1101897228
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2047,6 +2049,7 @@ MonoBehaviour:
   baseScore: 10
   scaleScoreFromHitpointToCenter: 0
   scoreCenter: {fileID: 0}
+  scoreManager: {fileID: 0}
 --- !u!1 &1675491166
 GameObject:
   m_ObjectHideFlags: 0
@@ -2128,6 +2131,7 @@ MonoBehaviour:
   baseScore: 10
   scaleScoreFromHitpointToCenter: 0
   scoreCenter: {fileID: 0}
+  scoreManager: {fileID: 0}
 --- !u!1 &1773768082 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2797952397037996092, guid: 1fb3a3586f8ffbc4f9179dabbbf045f6,
@@ -2149,7 +2153,13 @@ MonoBehaviour:
   sfxSource: {fileID: 2132090411}
   sounds:
   - soundType: 0
-    clip: {fileID: 8300000, guid: e095f5fa391cb824b8fa9ca333337121, type: 3}
+    clip: {fileID: 8300000, guid: 53a5c3c5a72c9314a83485733c045780, type: 3}
+  - soundType: 1
+    clip: {fileID: 8300000, guid: cd6dc4c454977f948b0c45672fe0d8c8, type: 3}
+  - soundType: 2
+    clip: {fileID: 8300000, guid: 3b1ce6daf10d1f2408bec273c4be2f96, type: 3}
+  - soundType: 3
+    clip: {fileID: 8300000, guid: 53223b523c1621d4db37bdc1af9ae282, type: 3}
 --- !u!1 &1882490180
 GameObject:
   m_ObjectHideFlags: 0

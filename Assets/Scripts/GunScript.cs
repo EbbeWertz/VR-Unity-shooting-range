@@ -77,7 +77,7 @@ public class GunScript : MonoBehaviour
 
 
         muzzleEffect.GetComponent<ParticleSystem>().Play();
-        audioManager.PlaySFX(SoundEffect.Gunshot1);
+        audioManager.PlaySFX(SoundEffect.Gunshot1, 0.5f);
 
         RaycastHit hit;
         Vector3 origin = puntjeVanDeBarrel.position;
@@ -89,16 +89,16 @@ public class GunScript : MonoBehaviour
             if (hit.transform.CompareTag("Wood"))
             {
                 effectPrefab = impactWoodEffectPrefab;
-                audioManager.PlaySFX(SoundEffect.ImpactWood, hit.point);
+                audioManager.PlaySFX(SoundEffect.ImpactWood, hit.point, 3f);
             }
             else if (hit.transform.CompareTag("Metal"))
             {
                 effectPrefab = impactMetalEffectPrefab;
-                audioManager.PlaySFX(SoundEffect.ImpactMetal, hit.point);
+                audioManager.PlaySFX(SoundEffect.ImpactMetal, hit.point, 2f);
             }
             else
             {
-                audioManager.PlaySFX(SoundEffect.ImpactStone, hit.point);
+                audioManager.PlaySFX(SoundEffect.ImpactStone, hit.point, 4f);
             }
 
             GameObject effect = Instantiate(
