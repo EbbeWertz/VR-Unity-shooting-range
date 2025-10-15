@@ -15,31 +15,31 @@ public class GunHandDisabler : MonoBehaviour
     {
         if (grabbable.isGrabbed)
         {
-            // When grabbed, disable the hand mesh + colliders
+            // Als de gun ge-grabbed is, disable de hand.
             if (grabbedHand == null && grabbable.grabbedBy != null)
             {
                 grabbedHand = grabbable.grabbedBy.gameObject;
-                SetHandVisible(grabbedHand, false);
+                DisableHand(grabbedHand, false);
             }
         }
         else
         {
-            // When released, re-enable the hand
+            // als die losgelaten is re-enable weer
             if (grabbedHand != null)
             {
-                SetHandVisible(grabbedHand, true);
+                DisableHand(grabbedHand, true);
                 grabbedHand = null;
             }
         }
     }
 
-    private void SetHandVisible(GameObject hand, bool visible)
+    private void DisableHand(GameObject hand, bool visible)
     {
-        // Disable all renderers
+        // Disable renderers
         foreach (var renderer in hand.GetComponentsInChildren<Renderer>())
             renderer.enabled = visible;
 
-        // Optionally disable colliders too
+        // Disable colliders
         foreach (var col in hand.GetComponentsInChildren<Collider>())
             col.enabled = visible;
     }
