@@ -30,4 +30,13 @@ public class ScoreManager : MonoBehaviour
             scoreText.text = "Score: " + score;
         }
     }
+
+    public void ResetScore()
+    {
+        score = 0;
+        if (scoreText != null)
+        {
+            scoreText.text = "Score: " + score;
+        }
+    }
 }

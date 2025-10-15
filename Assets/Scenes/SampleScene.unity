@@ -5917,6 +5917,7 @@ MonoBehaviour:
   - {fileID: 1627300098}
   - {fileID: 1101470339}
   - {fileID: 1772382270}
+  scoreManager: {fileID: 1930730231}
 --- !u!4 &1882490182
 Transform:
   m_ObjectHideFlags: 0
