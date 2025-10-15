@@ -24,5 +24,6 @@ public class ScoreTargettableObject : MonoBehaviour
         }
 
         Debug.Log($"{gameObject.name} was hit! Score: {score:F1}");
+        scoreManager.AddScore((int)score);
     }
 }
